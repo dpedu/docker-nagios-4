@@ -9,12 +9,12 @@ ENV NAGIOS_PLUGINS_TARBALL http://www.nagios-plugins.org/download/nagios-plugins
 
 # Packages: update & install
 ENV DEBCONF_FRONTEND noninteractive
-ENV APTGETINSTALL apt-get install -qq -y --no-install-recommends
 RUN sed -i 's~.* universe$~\0 multiverse~' /etc/apt/sources.list
 RUN apt-get update -qq
-RUN $APTGETINSTALL python-pip supervisor build-essential
-RUN $APTGETINSTALL apache2 libapache2-mod-php5 snmp-mibs-downloader
-RUN $APTGETINSTALL libgd2-xpm-dev libssl-dev wget curl libnet-snmp-perl libperl5.14 libpq5 libradius1 libsensors4 libsnmp-base libsnmp15 libtalloc2 libtdb1 libwbclient0 samba-common samba-common-bin smbclient snmp whois libmysqlclient15-dev
+RUN apt-get install -qq -y --no-install-recommends python-pip supervisor build-essential
+RUN apt-get install -qq -y --no-install-recommends apache2 libapache2-mod-php5 snmp-mibs-downloader
+RUN apt-get install -qq -y --no-install-recommends wget curl samba-common samba-common-bin smbclient snmp whois
+RUN apt-get install -qq -y --no-install-recommends libgd2-xpm-dev libssl-dev libnet-snmp-perl libperl-dev libpq5 libradius1 libsensors4 libsnmp-base libtalloc2 libtdb1 libwbclient0 libmysqlclient15-dev
 RUN pip install j2cli
 
 # Users
