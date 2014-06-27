@@ -6,6 +6,7 @@ Contains:
 * Nagios Core
 * Nagios Plugins
 * Nagios NPRE (Remote Plugin Execution)
+* Nagios NSCA (passive checks)
 * Apache
 * PHP
 
@@ -17,14 +18,15 @@ Exports
 
 * Nginx on `80`
 * Nagios NRPE on `5666`
+* Nagios NSCA on `5667`
 * `/etc/nagios`: configuration
 * `/usr/local/nagios/var/`: nagios runtime
 
 Variables
 ---------
 
-* `NAGIOS_USER=nagios`: Web UI username
-* `NAGIOS_PASS=nagios`: Web UI password
+* `NAGIOS_USER=nagiosadmin`: Web UI username
+* `NAGIOS_PASS=nagiosadmin`: Web UI password
 
 Constants in Dockerfile
 -----------------------
@@ -33,6 +35,7 @@ Constants in Dockerfile
 * `NAGIOS_TARBALL`: Nagios tarball URL
 * `NAGIOS_PLUGINS_TARBALL`: Nagios Plugins tarball URL
 * `NAGIOS_NRPE_TARBALL`: Nagios NRPE tarball URL
+* `NAGIOS_NSCA_TARBALL`: Nagios NSCA tarball URL
 
 Example
 -------

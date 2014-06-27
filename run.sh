@@ -2,8 +2,8 @@
 set -eu # exit on error or undefined variable
 
 # Variables
-export NAGIOS_USER=${NAGIOS_USER:-"nagios"}
-export NAGIOS_PASS=${NAGIOS_PASS:-"nagios"}
+export NAGIOS_USER=${NAGIOS_USER:-"nagiosadmin"}
+export NAGIOS_PASS=${NAGIOS_PASS:-"nagiosadmin"}
 
 # Templating
 htpasswd -cb /etc/nagios/htpasswd.users $NAGIOS_USER $NAGIOS_PASS
