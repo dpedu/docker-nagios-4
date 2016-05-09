@@ -45,6 +45,7 @@ RUN cd /usr/local/src/nagios4-nrpe && wget $NAGIOS_NRPE_TARBALL -O- | tar -zxp -
 RUN mkdir -p /usr/local/src/nagios4-nsca
 RUN cd /usr/local/src/nagios4-nsca && wget $NAGIOS_NSCA_TARBALL -O- | tar -zxp --strip-components 1 && ./configure --with-nsca-user=nagios --with-nsca-grp=nagios && make all
 RUN cd /usr/local/src/nagios4-nsca && cp sample-config/nsca.cfg sample-config/send_nsca.cfg /etc/nagios/ && cp src/send_nsca src/nsca /usr/local/bin/
+RUN chmod 644 /etc/nagios/nsca.cfg
 
 # Clean-up
 RUN rm -rf /usr/local/src/nagios*
